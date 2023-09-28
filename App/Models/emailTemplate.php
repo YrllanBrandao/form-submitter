@@ -10,7 +10,6 @@
     <tr>
         <td align="center" style="padding: 40px 0;">
             <h1 style="color: #ffffff; font-size: 36px; margin: 0;">Você recebeu um novo envio </h1>
-            <p style="color: #ffffff; font-size: 18px;">Fique por dentro das últimas inovações!</p>
         </td>
     </tr>
 </table>

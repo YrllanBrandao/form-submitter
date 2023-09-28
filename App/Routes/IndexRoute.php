@@ -12,6 +12,11 @@
                 'controller' => 'indexController',
                 'action' => 'index'
             ];
+            $routes['formSubmit'] = [
+                'route' => '/submit',
+                'controller' => 'indexController',
+                'action' => 'submit'
+            ];
 
             $this -> routes = $routes;
         }
