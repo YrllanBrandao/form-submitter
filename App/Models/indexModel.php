@@ -31,4 +31,24 @@
                 echo 'an  error has ocurred';
             }
         }
+        public function formSubmit(){
+
+            $mail = $this -> mail;
+
+            $mail -> setFrom($_ENV['SMTP_EMAIL'], $_ENV['SMTP_USERNAME']);
+            $mail -> addAddress('yrllanflamengp@gmail.com');
+
+            // content 
+
+            $mail -> isHTML(true);
+            $mail -> Subject = "Nova submissão de formulário";
+            
+            $structure = [];
+
+            ob_start();
+            include_once('./emailTemplate.php');
+           $html = ob_get_clean();
+
+           $mail -> Body =  $html;
+        }
     }
