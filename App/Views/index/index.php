@@ -91,7 +91,7 @@
             <div class="card p-1 p-2 mx-auto">
             <p class="p-2">
                 <span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="name" value="false"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="_recaptcha" value="false"&gt;<br>
                 </span>
             </p>
           </div>
