@@ -73,7 +73,7 @@
             $statement  -> bindParam(":email", $email);
             $statement -> execute();
 
-            echo "O formulário vinculado ao e-mail {$email} está ativo"; 
+            header("Location: /confirmed-form");
            }
            catch(PDOException $error){
             echo 'falha ao ativar formulário, tente novamente mais tarde!';

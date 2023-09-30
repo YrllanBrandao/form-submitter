@@ -10,12 +10,12 @@
 </head>
 <body>
 
-<div class="container container-main mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="alert alert-success text-center">
-                <h1 class="mb-4">Formulário Ativado com Sucesso!</h1>
-                <p>O seu formulário foi ativado com sucesso. Agora você pode aproveitar todos os recursos e funcionalidades.</p>
+<div class="container container-main d-flex align-items-center justify-content-center">
+    <div class="row justify-content-center ">
+        <div class="card-success">
+            <div class="alert alert-light text-center ">
+                <h1 class="mb-4 text-dark">Formulário Ativado com Sucesso!</h1>
+                <p class="text-dark">O seu formulário foi ativado com sucesso. Agora você pode aproveitar todos os recursos e funcionalidades.</p>
 
                 <figure>
                     <img src="./images/confirmedForm.svg" alt="Personagem alegre" width="150px">
