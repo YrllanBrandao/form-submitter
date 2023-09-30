@@ -14,7 +14,8 @@
 
         public function InitMailerConfig(){
             try{
-                $dotenv = Dotenv::createImmutable(__DIR__);
+                $dotenv_path = dirname(__DIR__);
+                $dotenv = Dotenv::createImmutable($dotenv_path);
             $dotenv -> load();
 
             $mail = new PHPMailer(true);
@@ -33,13 +34,31 @@
                 echo 'an  error has ocurred';
             }
         }
+        public function showCaptcha(){
+          include_once "../App/Views/index/recaptcha.php";
+        }
         public function formSubmit(){
 
            try{
+
+            
+            $target = $_GET['target'];
+
+            if(is_null($target) || $target === '') {
+                header("location: /error");
+                exit();
+            }
+            // email regex
+            $pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+
+            if(!preg_match($pattern, $target)){
+                header("location: /error-regex");
+                exit();
+            }
             $mail = $this -> mail;
 
             $mail -> setFrom($_ENV['SMTP_EMAIL'], $_ENV['SMTP_USERNAME']);
-            $mail -> addAddress('yrllanflamengp@gmail.com');
+            $mail -> addAddress($target);
 
             // content 
 
@@ -48,6 +67,8 @@
             
             $structure = [];
 
+
+            // capture the field values and template
             ob_start();
             include_once('emailTemplate.php');
            $html = ob_get_clean();
@@ -57,7 +78,7 @@
         echo  'enviado';
            }
            catch(PHPMailer_exception $exception){
-            echo 'um erro';
+            echo 'um erro, tente novamente mais tarde';
            }
 
         }

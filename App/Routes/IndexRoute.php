@@ -12,6 +12,11 @@
                 'controller' => 'indexController',
                 'action' => 'index'
             ];
+            $routes['reCaptcha'] = [
+                'route' => '/recaptcha',
+                'controller' => 'indexController',
+                'action' => 'validateRecaptcha'
+            ];
             $routes['formSubmit'] = [
                 'route' => '/submit',
                 'controller' => 'indexController',
