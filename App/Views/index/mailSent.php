@@ -19,7 +19,16 @@
     <div class="illustration">
         <img src="images/mail_sent.svg" alt="Ilustração de e-mail enviado com sucesso" width="150px">
     </div>
+    <button class="btn btn-primary" id="btn-back">
+        Voltar para página anterior
+    </button>
 </div>
+    <script>
+        const buttonBack = document.getElementById("btn-back");
 
+        buttonBack.addEventListener("click", ()=>{
+            window.history.back();
+        })
+    </script>
 </body>
 </html>

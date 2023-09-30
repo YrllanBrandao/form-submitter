@@ -36,3 +36,16 @@ body {
     max-width: 100%;
     height: auto;
 }
+
+.btn{
+    background-color: #007BFF; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    cursor: pointer; 
+}
+.btn:hover {
+    background-color: #0056b3; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
