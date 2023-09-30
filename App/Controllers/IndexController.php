@@ -12,12 +12,16 @@
 
         private function disableCaptcha(){
             
-            foreach($_POST as $field => $value)
-            {
-                if($field === "_captcha" && is_bool($value)){
-                    return !is_bool($value);
+            $hasRecaptchaField = isset($_POST['_recaptcha']);
+            if($hasRecaptchaField){
+                $recaptcha = $_POST['_recaptcha'];
+               
+                if($recaptcha)
+                {
+                    return false;
+                    
                 }
-                return false;
+                return true;
             }
         }
         public function Index(){
@@ -43,7 +47,7 @@
                 $data[] = [$field => $value];
             }
 
-            
+
             $_SESSION['form_submitter_data'] = $data;
 
         }
@@ -62,12 +66,14 @@
                 
                     $this -> saveFieldsAndValues();
                 $disableRecaptcha = $this -> disableCaptcha();
-                    if($disableRecaptcha){
-                        $indexModel -> formSubmit($target);
-                        exit;
-                    }
-                    $_SESSION['form_submitter_target'] = $target;
-                    $this -> recaptcha();
+                   
+
+                if(!$disableRecaptcha){
+                    $indexModel -> formSubmit($target);
+                    exit;
+                }
+                $_SESSION['form_submitter_target'] = $target;
+                $this -> recaptcha();
 
                 }
 

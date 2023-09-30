@@ -37,6 +37,11 @@
                 'controller' => 'indexController',
                 'action' => 'activateForm'
             ];
+            $routes['thanksPage'] = [
+                'route' => '/thanks',
+                'controller' => 'indexController',
+                'action' => 'renderThanks'
+            ];
             $routes['debug'] = [
                 'route' => '/debug',
                 'controller' => 'indexController',
