@@ -79,7 +79,7 @@
          $mail -> addAddress($email);
          $mail -> Body = $html;
          $mail -> send();
-
+            header("Location: /mail-sent");
            }
            catch(PHPMailer_exception $error){
             echo "ocorreu um erro no envio do e-mail de confirmação, tente novamente mais tarde";

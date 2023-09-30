@@ -7,14 +7,14 @@
 </head>
 <body>
 
-<div class="container d-flex justify-content-center align-items-center">
+<div class="container d-flex justify-content-center align0">
 
     <div class="message">
         <h2>Confirmação de Envio de E-mail</h2>
     </div>
     <div class="confirmation-text">
-        <p>O e-mail foi enviado com sucesso para sua caixa de entrada.</p>
-        <p>Verifique sua caixa de entrada e, se não encontrar o e-mail, verifique a pasta de spam.</p>
+        <p>O e-mail para ativação do <strong>Formulário</strong> foi enviado com sucesso para sua caixa de entrada.</p>
+        <p>Verifique sua caixa de entrada e, se não encontrar o e-mail, verifique a pasta de <strong>spam</strong>.</p>
     </div>
     <div class="illustration">
         <img src="images/mail_sent.svg" alt="Ilustração de e-mail enviado com sucesso" width="150px">
