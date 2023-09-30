@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-main{
+    height: 100vh;
+}
+body{
+    background: #252B48;
+}
+.text-black{
+    color: black;
+}
+
+.thanks-card{
+    width: 40vw;
+}

@@ -42,12 +42,7 @@
                 'controller' => 'indexController',
                 'action' => 'renderThanks'
             ];
-            $routes['debug'] = [
-                'route' => '/debug',
-                'controller' => 'indexController',
-                'action' => 'debug'
-            ];
-
+      
 
             $this -> routes = $routes;
         }

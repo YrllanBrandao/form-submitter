@@ -27,6 +27,9 @@
         public function Index(){
             $this -> render('index');
         }
+        public function renderThanks(){
+            $this -> render("thanks");
+        }
         private function hasAValidTarget($target){
  
             if(is_null($target) || $target === '') {
