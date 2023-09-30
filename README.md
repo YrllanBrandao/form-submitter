@@ -14,3 +14,8 @@ Este projeto utiliza o meu mini sistema de roteamento com depêndencia própria,
 #### Google reCaptcha v2
 ![image](https://github.com/YrllanBrandao/form-submitter/assets/77467410/176e57f8-9a49-4c12-912e-c5ac5dd256ea)
 
+
+#### E-mail para confirmar ativação do formulário
+
+![image](https://github.com/YrllanBrandao/form-submitter/assets/77467410/f1cb2ccc-f650-4f49-a5cd-196d80978da7)
+
