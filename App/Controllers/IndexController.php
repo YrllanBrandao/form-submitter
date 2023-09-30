@@ -21,6 +21,7 @@
             $this -> render("mailSent");
         }
         public function recaptcha(){
+            
             $this -> render("recaptcha");
         }
         public function validateRecaptcha(){

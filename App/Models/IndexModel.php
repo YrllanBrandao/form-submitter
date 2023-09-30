@@ -85,6 +85,23 @@
             echo "ocorreu um erro no envio do e-mail de confirmação, tente novamente mais tarde";
            }
         }
+        public function registerForm($email){
+           try{
+            $query ='
+            INSERT INTO forms(email, active) VALUES (:email, false)
+            ';
+
+            $statement = $this -> $connection -> prepare($query);
+
+            $statement = $statement-> bindParam(":email", $email);
+            $statement -> execute();
+            return true;
+           }
+           catch(PDOException $error){
+            return false;
+           }
+
+        }
         public function formSubmit(){
 
            try{
@@ -109,6 +126,7 @@
 
             if(!$formIsActive){
                 $this -> sendConfirmationMail($target);
+                $this -> registerForm($target);
                 exit;
             }
             $mail = $this -> mail;
