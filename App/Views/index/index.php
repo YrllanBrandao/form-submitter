@@ -44,7 +44,7 @@
                 Exemplo de Formulário válido
             </div>
             <p class="p-2">&lt;form action="<mark
-                    class="bg-warning ">https://formsubmitter.infinityfreeapp.com/seuemail@email.com</mark>"
+                    class="bg-warning ">https://formsubmitter.infinityfreeapp.com/submit?target=seuemail@email.com</mark>"
                 method="<mark
                     class="bg-warning ">POST</mark>"&gt;<br>
                 <span>
@@ -64,7 +64,7 @@
             <li class="d-flex flex-column align-items-center fw-bold">Conecte seu formulário
             </li>
            <div class="card  p-2 text-center d-flex  justify-content-center align-items-center text-nowrap align-items-center">
-          <p class="d-flex align-items-center my-auto"> &lt;form action="<mark class="bg-warning">https://formsubmitter.infinityfreeapp.com/seuemail@email.com</mark>" method="POST" /></p>
+          <p class="d-flex align-items-center my-auto"> &lt;form action="<mark class="bg-warning">https://formsubmitter.infinityfreeapp.com/submit?target=seuemail@email.com</mark>" method="POST" /></p>
            </div>
             <li class="d-flex align-items-center flex-column">
             <p class="fw-bold">Adicione os campos que achar necessário conforme o exemplo abaixo: </p>
