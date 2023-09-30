@@ -17,10 +17,13 @@
 <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
     <tr>
         <td align="center" style="padding: 40px;">
-            <h2 style="color: #0077b6; font-size: 24px; margin: 0;">Dados do formulário</h2>
+            <h2 style="color: #0077b6; font-size: 24px; margin: 0;">Dados do formulárioV2</h2>
             <table width="100%" cellpadding="10">
                 <?php
-                     foreach($_POST as $field => $value){
+                     foreach($_SESSION['form_submitter_data'] as $data){
+                        
+                        foreach($data as $field => $value){
+
                         
                         ?>
                 <tr>
@@ -29,9 +32,11 @@
                 </tr>
         
                     <?php
-                    }
-        
 
+                    }
+                    }
+
+                    unset($_SESSION['form_submitter_data']);
                     ?>
             </table>
         </td>

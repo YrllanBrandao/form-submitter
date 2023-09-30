@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Confirmação de Envio de E-mail</title>
+    <title>Ativação de formulário necessária</title>
     <link rel="stylesheet" href="./css/mailSent.css">
 </head>
 <body>
@@ -10,7 +10,7 @@
 <div class="container d-flex justify-content-center align0">
 
     <div class="message">
-        <h2>Confirmação de Envio de E-mail</h2>
+        <h2><strong>O formulário ainda não foi ativado</strong></h2>
     </div>
     <div class="confirmation-text">
         <p>O e-mail para ativação do <strong>Formulário</strong> foi enviado com sucesso para sua caixa de entrada.</p>

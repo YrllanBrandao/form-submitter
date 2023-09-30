@@ -53,14 +53,33 @@
           include_once "../App/Views/index/recaptcha.php";
         }
         private function genConfirmationEmailToken($email){
-            define("ONE_DAY_IN_SECONDS", 86.400);
+
             $jwt_secret = $_ENV['JWT_SECRET'];
             $payload = [
                 "email" => $email ,
-                "exp" => ONE_DAY_IN_SECONDS
+                "exp" => time() + 60 * 60 * 24 * 10,
+                "nbf" => time()
             ];
             $token = JWT::encode($payload, $jwt_secret, 'HS256');
             return $token;
+        }
+        public function activateForm($email){
+           try{
+            $query = '
+            UPDATE forms SET active=true WHERE email = :email
+            ';
+            $statement = $this -> connection -> prepare($query);
+
+            $statement  -> bindParam(":email", $email);
+            $statement -> execute();
+
+            echo "O formulário vinculado ao e-mail {$email} está ativo"; 
+           }
+           catch(PDOException $error){
+            echo 'falha ao ativar formulário, tente novamente mais tarde!';
+           }
+
+
         }
         public function sendConfirmationMail($email){
 
@@ -71,7 +90,7 @@
           
           $confirmation_token  = $this -> genConfirmationEmailToken($email);
           $domain = $_ENV['DOMAIN'];
-          $confirmation_link = $domain . '/confirmation-email&token=' . $confirmation_token;
+          $confirmation_link = $domain . '/confirm-email?token=' . $confirmation_token;
           ob_start();
           include_once "confirmationEmail.php";
          $html = ob_get_clean();
@@ -106,40 +125,15 @@
            }
 
         }
-        public function formSubmit(){
+        public function formSubmit($target){
 
            try{
 
-            
-            $target = $_GET['target'];
-
-            if(is_null($target) || $target === '') {
-                header("location: /error");
-                exit();
-            }
-            // email regex
-            $pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
-
-
-            if(!preg_match($pattern, $target)){
-                header("location: /error-regex");
-                exit();
-            }
-
-            $formIsActive = $this -> checkFormStatus($target);
-
-            if(!$formIsActive){
-                $this -> sendConfirmationMail($target);
-                $this -> registerForm($target);
-                exit;
-            }
+    
             $mail = $this -> mail;
             $mail -> Subject = "Novo envio de formulário";
             $mail -> addAddress($target);
-            
-            $structure = [];
-
-
+        
             // capture the field values and template
             ob_start();
             include_once('emailTemplate.php');
@@ -147,7 +141,7 @@
 
            $mail -> Body =  $html;
            $mail -> send();
-        echo  'enviado';
+            
            }
            catch(PHPMailer_exception $exception){
             echo 'um erro, tente novamente mais tarde';
@@ -155,7 +149,7 @@
 
         }
 
-        private function checkFormStatus($email){
+        public function checkFormStatus($email){
 
            try{
             $query = '

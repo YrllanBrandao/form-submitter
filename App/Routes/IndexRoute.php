@@ -32,6 +32,17 @@
                 'controller' => 'indexController',
                 'action' => 'mailSent'
             ];
+            $routes['confirmMail'] = [
+                'route' => '/confirm-email',
+                'controller' => 'indexController',
+                'action' => 'activateForm'
+            ];
+            $routes['debug'] = [
+                'route' => '/debug',
+                'controller' => 'indexController',
+                'action' => 'debug'
+            ];
+
 
             $this -> routes = $routes;
         }
