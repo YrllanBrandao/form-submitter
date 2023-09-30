@@ -17,6 +17,11 @@
                 'controller' => 'indexController',
                 'action' => 'validateRecaptcha'
             ];
+            $routes['reCaptchaView'] = [
+                'route' => '/recaptcha-challenge',
+                'controller' => 'indexController',
+                'action' => 'recaptcha'
+            ];
             $routes['formSubmit'] = [
                 'route' => '/submit',
                 'controller' => 'indexController',

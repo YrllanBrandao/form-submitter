@@ -20,6 +20,9 @@
         public function mailSent(){
             $this -> render("mailSent");
         }
+        public function recaptcha(){
+            $this -> render("recaptcha");
+        }
         public function validateRecaptcha(){
 
             $dotenv_path = dirname(__DIR__);
