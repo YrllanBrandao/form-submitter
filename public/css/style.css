@@ -5,7 +5,7 @@
 }
 
 .card{
-    width: 30vw;
+    min-width: 38vw;
     padding: 0;
     font-size: clamp(12px, 15px, 17px);
 }
@@ -13,4 +13,43 @@
 code{
     width: 30vw;
     text-align: left;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.container-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilize o rodapé */
+footer {
+    width: 100%;
+    background-color: #343a40; /* Cor de fundo do Bootstrap Dark */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+}
+
+.text-muted{
+    font-size: 12px;
+}
+
+ol{
+    width: 40vw;
+    align-items: center;
+    
+}
+ol div, li{
+    width: 90%;
 }
