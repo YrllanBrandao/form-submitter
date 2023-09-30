@@ -31,6 +31,10 @@
         public function renderThanks(){
             $this -> render("thanks");
         }
+        public function confirmedForm(){
+            $this -> render("confirmedForm");
+        }
+    
         private function hasAValidTarget($target){
  
             if(is_null($target) || $target === '') {

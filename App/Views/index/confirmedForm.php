@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ativação de Formulário</title>
+    <!-- Incluindo Bootstrap CSS para estilização (opcional) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/confirmedForm.css">
+</head>
+<body>
+
+<div class="container container-main mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="alert alert-success text-center">
+                <h1 class="mb-4">Formulário Ativado com Sucesso!</h1>
+                <p>O seu formulário foi ativado com sucesso. Agora você pode aproveitar todos os recursos e funcionalidades.</p>
+
+                <figure>
+                    <img src="./images/confirmedForm.svg" alt="Personagem alegre" width="150px">
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="fixed-bottom container-fluid py-2 text-light d-flex flex-column align-items-center">
+    <p>&copy; <?php echo date("Y"); ?> Yrllan Brandão</p>
+        <div>
+            <!-- Links para o LinkedIn e GitHub com ícones do FontAwesome -->
+            <a href="https://www.linkedin.com/in/yrllanbrandao/" target="_blank" class="text-light me-3">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/YrllanBrandao" target="_blank" class="text-light">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </footer>
+
+<!-- Incluindo Bootstrap JS (opcional, se você precisar de componentes JavaScript) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

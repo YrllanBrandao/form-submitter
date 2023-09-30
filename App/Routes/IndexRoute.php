@@ -42,7 +42,13 @@
                 'controller' => 'indexController',
                 'action' => 'renderThanks'
             ];
-      
+            $routes['confirmedForm'] = [
+                'route' => '/confirmed-form',
+                'controller' => 'indexController',
+                'action' => 'confirmedForm'
+            ];
+       
+
 
             $this -> routes = $routes;
         }
