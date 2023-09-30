@@ -59,9 +59,17 @@
             $_SESSION['form_submitter_data'] = $data;
 
         }
+        private function saveFormSourceAddress(){
+            $address = $_SERVER['HTTP_HOST'];
+
+            $_SESSION['form_source_address'] = $address;
+
+        }
         public function Submit(){
                
             $target = $_GET['target'];
+
+            $this -> saveFormSourceAddress();
             $targetIsValid = $this -> hasAValidTarget($target);
             // check if the e-mail is valid
             if($targetIsValid){

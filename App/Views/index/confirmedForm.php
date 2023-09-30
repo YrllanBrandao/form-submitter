@@ -20,6 +20,24 @@
                 <figure>
                     <img src="./images/confirmedForm.svg" alt="Personagem alegre" width="150px">
                 </figure>
+
+                 <!-- custom button back -->
+                 <?php
+                    if(isset($_SESSION['form_source_address'])){
+                        ?>
+                            <a href="<?= $_SESSION['form_source_address']  ?>" class="btn btn-primary" >
+                            Voltar para página anterior
+                            </a>
+                        <?php
+                    }
+                    else{
+                        ?>
+                            <button class="btn btn-primary" id="btn-back">
+                                Voltar para o site de origem
+                            </button>
+                        <?php
+                    }
+                ?>
             </div>
         </div>
     </div>
@@ -39,6 +57,12 @@
 
 <!-- Incluindo Bootstrap JS (opcional, se você precisar de componentes JavaScript) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+        const buttonBack = document.getElementById("btn-back");
 
+        buttonBack.addEventListener("click", ()=>{
+            window.history.back();
+        })
+    </script>
 </body>
 </html>

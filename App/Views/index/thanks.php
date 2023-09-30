@@ -15,9 +15,24 @@
             <div class="alert alert-light text-center">
                 <h1 class="mb-4 text-dark">Obrigado pelo seu contato!</h1>
                 <p class="text-black">Recebemos seu e-mail com sucesso.</p>
-                <button class="btn btn-primary" id="btn-back">
-                Voltar para página anterior
-                </button>
+                </div>
+                <!-- custom button back -->
+                <?php
+                    if(isset($_SESSION['form_source_address'])){
+                        ?>
+                            <a href="<?= $_SESSION['form_source_address']  ?>" class="btn btn-primary" >
+                            Voltar para página anterior
+                            </a>
+                        <?php
+                    }
+                    else{
+                        ?>
+                            <button class="btn btn-primary" id="btn-back">
+                                Voltar para o site de origem
+                            </button>
+                        <?php
+                    }
+                ?>
             </div>
         </div>
     </div>

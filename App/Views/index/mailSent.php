@@ -19,9 +19,22 @@
     <div class="illustration">
         <img src="images/mail_sent.svg" alt="Ilustração de e-mail enviado com sucesso" width="150px">
     </div>
-    <button class="btn btn-primary" id="btn-back">
-        Voltar para página anterior
-    </button>
+    <?php
+        if(isset($_SESSION['form_source_address'])){
+            ?>
+                <a href="<?= $_SESSION['form_source_address']  ?>" class="btn btn-primary" >
+                Voltar para página anterior
+                </a>
+            <?php
+        }
+        else{
+            ?>
+                <button class="btn btn-primary" id="btn-back">
+                    Voltar para o site de origem
+                </button>
+            <?php
+        }
+    ?>
 </div>
     <script>
         const buttonBack = document.getElementById("btn-back");

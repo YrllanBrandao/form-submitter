@@ -47,11 +47,7 @@
                 'controller' => 'indexController',
                 'action' => 'confirmedForm'
             ];
-            $routes['debug'] = [
-                'route' => '/debug',
-                'controller' => 'indexController',
-                'action' => 'debug'
-            ];
+       
 
 
             $this -> routes = $routes;
