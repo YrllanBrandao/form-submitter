@@ -22,6 +22,11 @@
                 'controller' => 'indexController',
                 'action' => 'submit'
             ];
+            $routes['mailSent'] = [
+                'route' => '/mail-sent',
+                'controller' => 'indexController',
+                'action' => 'mailSent'
+            ];
 
             $this -> routes = $routes;
         }

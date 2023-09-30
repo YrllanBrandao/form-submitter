@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
+}
+.message {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.message h2 {
+    color: #0077b6;
+}
+.confirmation-text {
+    font-size: 16px;
+    color: #333333;
+}
+.illustration {
+    text-align: center;
+    margin-top: 20px;
+}
+.illustration img {
+    max-width: 100%;
+    height: auto;
+}

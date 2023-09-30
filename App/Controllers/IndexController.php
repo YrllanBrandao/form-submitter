@@ -13,8 +13,12 @@
         public function Submit(){
             $indexModel = new IndexModel;
 
-            $indexModel -> showCaptcha();
+            $indexModel -> formSubmit();
 
+        }
+
+        public function mailSent(){
+            $this -> render("mailSent");
         }
         public function validateRecaptcha(){
 
