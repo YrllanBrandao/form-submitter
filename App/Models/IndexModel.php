@@ -141,7 +141,7 @@
 
            $mail -> Body =  $html;
            $mail -> send();
-            
+            header("Location: /thanks");
            }
            catch(PHPMailer_exception $exception){
             echo 'um erro, tente novamente mais tarde';

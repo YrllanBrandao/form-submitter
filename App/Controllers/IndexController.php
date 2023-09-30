@@ -14,15 +14,16 @@
             
             $hasRecaptchaField = isset($_POST['_recaptcha']);
             if($hasRecaptchaField){
-                $recaptcha = $_POST['_recaptcha'];
-               
-                if($recaptcha)
-                {
+                $recaptcha = (bool) $_POST['_recaptcha'];
+
+                var_dump($recaptcha);
+                if($recaptcha == false){
+                    echo "CHGA AQUI";
                     return false;
-                    
                 }
                 return true;
             }
+            return false;
         }
         public function Index(){
             $this -> render('index');
@@ -70,11 +71,13 @@
                     $this -> saveFieldsAndValues();
                 $disableRecaptcha = $this -> disableCaptcha();
                    
-
-                if(!$disableRecaptcha){
+                echo "</hr>";
+                    var_dump($disableRecaptcha);
+                if($disableRecaptcha){
                     $indexModel -> formSubmit($target);
                     exit;
                 }
+               
                 $_SESSION['form_submitter_target'] = $target;
                 $this -> recaptcha();
 

@@ -15,6 +15,9 @@
             <div class="alert alert-light text-center">
                 <h1 class="mb-4 text-dark">Obrigado pelo seu contato!</h1>
                 <p class="text-black">Recebemos seu e-mail com sucesso.</p>
+                <button class="btn btn-primary" id="btn-back">
+                Voltar para página anterior
+                </button>
             </div>
         </div>
     </div>
@@ -28,12 +31,19 @@
             <a href="https://github.com/YrllanBrandao" target="_blank" class="text-light">
                 <i class="fab fa-github"></i>
             </a>
+            
         </div>
     </div>
 </footer>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+        const buttonBack = document.getElementById("btn-back");
 
+        buttonBack.addEventListener("click", ()=>{
+            window.history.back();
+        })
+    </script>
 </body>
 </html>
