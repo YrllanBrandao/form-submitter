@@ -88,17 +88,21 @@
         public function registerForm($email){
            try{
             $query ='
-            INSERT INTO forms(email, active) VALUES (:email, false)
+            INSERT INTO forms(email) VALUES (:email)
             ';
 
-            $statement = $this -> $connection -> prepare($query);
+            $statement = $this -> connection -> prepare($query);
 
-            $statement = $statement-> bindParam(":email", $email);
+           $statement-> bindParam(":email", $email);
             $statement -> execute();
-            return true;
+
+            ?>  
+          
+
+            <?php
            }
            catch(PDOException $error){
-            return false;
+            echo 'Ocorreu um erro no registro do e-mail de ativação, tente novamente mais tarde';
            }
 
         }
@@ -166,7 +170,7 @@
 
             $status =  $statement -> fetch(PDO::FETCH_ASSOC);
 
-            if($status){
+            if($status['active']){
                 return true;
             }
             return false;
