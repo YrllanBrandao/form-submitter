@@ -163,7 +163,10 @@
             $statement -> execute();
 
             $status =  $statement -> fetch(PDO::FETCH_ASSOC);
-
+            if(empty($status))
+            {
+                return false;
+            }
             if($status['active']){
                 return true;
             }
