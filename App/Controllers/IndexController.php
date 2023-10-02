@@ -16,9 +16,7 @@
             if($hasRecaptchaField){
                 $recaptcha = (bool) $_POST['_recaptcha'];
 
-                var_dump($recaptcha);
                 if($recaptcha == false){
-                    echo "CHGA AQUI";
                     return false;
                 }
                 return true;
@@ -83,8 +81,7 @@
                     $this -> saveFieldsAndValues();
                 $disableRecaptcha = $this -> disableCaptcha();
                    
-                echo "</hr>";
-                    var_dump($disableRecaptcha);
+               
                 if($disableRecaptcha){
                     $indexModel -> formSubmit($target);
                     exit;

@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <div class="container-fluid p-0 m-0 container-main align-items-center">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid fixed-top">
+    <div class="container-fluid p-0 m-0 d-flex container-main align-items-center flex-column pb-1">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid sticky-top">
     <div class="container">
         <a class="navbar-brand" href="#">Form Submitter <i class="fab fa-wpforms"></i></a>
 
@@ -43,63 +43,71 @@
             <div class="card-header">
                 Exemplo de Formulário válido
             </div>
-            <p class="p-2">&lt;form action="<mark
+            <div class="card-body">
+           
+                <span>
+                &lt;form action="<mark
                     class="bg-warning ">https://formsubmitter.infinityfreeapp.com/submit?target=seuemail@email.com</mark>"
-                method="<mark
-                    class="bg-warning ">POST</mark>"&gt;<br>
+                method="POST"&gt;<br>
+                </span>
                 <span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="name" required&gt;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="email" name="email" required&gt;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Send&lt;/button&gt;<br>
                 </span>
-                &lt;/form&gt;
-            </p>
+               <span> &lt;/form&gt;</span>
+           
+            </div>
 
         </div>
         <br>
         <p>não é necessário nenhum <strong>cadastro</strong>, apenas é necessário a ativação do formulário</p>
 
-        <br>
-          <ol class="d-flex flex-column align-items-center gap-2 p-0" id="list-tutorial">
-            <li class="d-flex flex-column align-items-center fw-bold">Conecte seu formulário
-            </li>
-           <div class="card  p-2 text-center d-flex  justify-content-center align-items-center text-nowrap align-items-center">
-          <p class="d-flex align-items-center my-auto"> &lt;form action="<mark class="bg-warning">https://formsubmitter.infinityfreeapp.com/submit?target=seuemail@email.com</mark>" method="POST" /></p>
-           </div>
-            <li class="d-flex align-items-center flex-column">
-            <p class="fw-bold">Adicione os campos que achar necessário conforme o exemplo abaixo: </p>
-          <p class="text-muted">
-          <strong>OBS:</strong> o parâmetro <mark class="bg-success text-white">name</mark> é <strong>obrigatório</strong>para qualquer elemento como: input e textarea, etc...
-          </p>
-            </li>
-            <div class="card p-1 p-2 mx-auto">
-            <p class="p-2">
-                <span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="name" required&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="email" name="email" required&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Send&lt;/button&gt;<br>
-                </span>
+
+       <main class="step-by-step">
+       <div class="container-fluid d-flex flex-column align-items-center container-step">
+            <h2 class=" step-title">
+           1.  Conecte seu formulário
+            </h2>
+            <p>
+                Você precisa ativar seu e-mail de proprietário uma única vez e poderá utilizar quantos formulários precisar, você também pode usar <a href="">esta página</a> para ativar seu e-mail proprietário.
             </p>
-          </div>
-         
-          <li class="d-flex align-items-center flex-column">
-            <p class="fw-bold">Desabilitar captcha: </p>
-          <p class="text-muted">
-          Por <strong>padrão</strong> o <span class="fw-bold">Form Submitter</span> utiliza o  <span class="fw-bold">Google Recaptcha</span> a cada envio, para desabilitar basta utilizar um  <span class="fw-bold">input</span> dp tipo  <span class="fw-bold">hidden(oculto)</span> com o valor  <span class="fw-bold">false</span> conforme o exemplo abaixo:
-          </p>
-            </li>
-            <div class="card p-1 p-2 mx-auto">
-            <p class="p-2">
-                <span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="_recaptcha" value="false"&gt;<br>
-                </span>
+            <span class="card-body card-tag">
+            &lt;form action="<mark class="bg-warning">https://formsubmitter.infinityfreeapp.com/submit?target=seuemail@email.com</mark>" method="POST" />
+            </span>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center container-step">
+            <h2 class=" step-title">
+           2.  Adicione quantos campos forem necessários
+            </h2>
+            <p>
+                O form Submitter utiliza o  parâmetro <mark>name</mark> para identificar os campos e reencaminhar para seu e-mail, então não pode haver duplicação 
             </p>
-          </div>
-          </ol>
+            <span class="card-body card-tag ">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="name" required&gt;
+            </span>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center container-step">
+            <h3 class=" step-title">
+           2.  Desabilitar o reCaptcha(opcional)
+            </h2>
+           <p>
+           Por <strong>padrão</strong> o <span class="fw-bold">Form Submitter</span> utiliza o  <span class="fw-bold">Google Recaptcha</span> a cada envio, para desabilitar basta utilizar um  <span class="fw-bold">input</span> dp tipo  <span class="fw-bold">hidden(oculto)</span> com o valor  <span class="fw-bold">false</span> conforme o exemplo abaixo:
+           </p>
+            <span class="card-body card-tag ">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="_recaptcha" value="false"&gt;<br>
+            </span>
+        </div>
+        
+       </main>
+          
+        
 
        
     </div>
-    <footer class="bg-dark text-light text-center py-3 ">
+    <footer class="bg-dark text-light text-center py-3">
     <div class="container">
         <p>&copy; <?php echo date("Y"); ?> Yrllan Brandão</p>
         <div>

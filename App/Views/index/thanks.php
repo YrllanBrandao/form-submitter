@@ -14,7 +14,7 @@
         <div class="col-md-6">
             <div class="alert alert-light text-center">
                 <h1 class="mb-4 text-dark">Obrigado pelo seu contato!</h1>
-                <p class="text-black">Recebemos seu e-mail com sucesso.</p>
+                <p class="text-black">Recebemos seu e-mail com sucesso. <?= $_SESSION['form_submitter_data'] ?></p>
                 </div>
                 <!-- custom button back -->
                 <?php

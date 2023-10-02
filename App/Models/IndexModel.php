@@ -172,7 +172,7 @@
             }
             return false;
            }
-           catch(PDOException){
+           catch(PDOException $error){
             echo "Ocorreu um erro em nosso servidor, tente novamente mais tarde.";
            }
 
